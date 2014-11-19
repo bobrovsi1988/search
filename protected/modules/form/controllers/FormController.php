@@ -84,6 +84,7 @@ public function GetUserId($name){
         $model = User::model()->with('town','educ')->findAll();
         $town = Town::model()->findAll($criteria);
         $education = Education::model()->findAll($edu);
+        $error = "";
         foreach($town as $city){
             $towns[$city->title] = $city->title;
         }
